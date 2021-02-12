@@ -1,0 +1,353 @@
+% Points used to define geometry
+% Total number of points
+% # of point    X      Y
+60
+
+% lower bound of slab
+1       0       -80000
+2       145107  -80000
+3       148777  -80453
+4       150000  -80603
+5       475000  -120508
+6       528383  -127062
+7       544596  -134281
+8       550000  -136687
+9       608000  -162510
+10      850000  -270225
+
+% upper bound of slab mantle/lower crust
+11      0       -20000
+12      145107  -20000
+13      148777  -20000
+14      150000  -20152
+15      475000  -60057
+16      528383  -66612
+17      544596  -68602
+18      550000  -71009
+19      608000  -96832
+20      850000  -204577
+
+% upper bound of slab crust
+21      0       -2
+22      145107  -2
+23      148777  -2
+24      150000  -2
+25      475000  -39907
+26      528383  -46462
+27      544595  -48452
+28      550000  -49116
+29      608000  -74939
+30      850000  -182684
+
+% Lab - cont crust
+31      0       -1.5
+32      145107  -1.5
+33      148777  -1.5
+34      150000  -1.5
+35      475000  -37453
+36      528383  -40731
+37      544596  -41726
+38      550000  -42058
+39      608000  -50000
+40      850000  -50000
+
+
+% continental moho
+41      0       -1
+42      145107  -1
+43      148777  -1
+44      150000  -1
+45      475000  -35000
+46      528383  -35000
+47      544596  -35000
+48      550000  -35000
+49      608000  -35000
+50      850000  -35000
+
+
+% surface of model
+51      0       0
+52      145107  0
+53      148777  0
+54      150000  0
+55      475000  0
+56      528383  0
+57      544596  0
+58      550000  0
+59      608000  0
+60      850000  0
+
+% Subdomain info
+% Total # of subdomains 
+% nx ny ndx ndy iu iv ip iT u v p T material_no
+% nx:  # of division along one direction
+% ny:  # of division along another direction
+% ndx: 0 = even grid, 1 = linear in positive , -1 = linear in negative ..., 
+%      2 = quadratisch ..., -2
+% ndy: similar tonde but in another direction
+% iu:  constrain for velocity in x direction,  1=free -1=fixed
+% iv:  constrain for velocity in y direction,  1=free -1=fixed
+% ip:  constrain for pressure,     1=free -1=fixed
+% iT:  constrain for temperature,  1=free -1=fixed
+% u:   given velocity in x
+% v:   given velocity in y
+% p:   given pressure
+% T:   given temperature
+
+%total number of subdomains(and boundaries) here
+13
+
+%for this section, first two lines define lower and upper bound of region. The next lines are used to define what happens in each segment box of the model within that sub-domain and boundary regions. 
+
+%slab mantle
+1 2 3 4 5 6 7 8 9 10
+11 12 13 14 15 16 17 18 19 20 
+30 12 0 0  1 1 1 1  0 0 0 0 1
+2  12 0 0  1 1 1 1  0 0 0 0 1
+2  12 0 0  1 1 1 1  0 0 0 0 1
+65 12 0 0  1 1 1 1  0 0 0 0 1
+15 12 0 0  1 1 1 1  0 0 0 0 1
+2  12 0 0  1 1 1 1  0 0 0 0 1
+2  12 0 0  1 1 1 1  0 0 0 0 1
+12 12 0 0  1 1 1 1  0 0 0 0 1
+48 12 0 0  1 1 1 1  0 0 0 0 1
+
+%slab crust
+11 12 13 14 15 16 17 18 19 20
+21 22 23 24 25 26 27 28 29 30
+30 4 0 0  1 1 1 1  0 0 0 0 2
+2  4 0 0  1 1 1 1  0 0 0 0 2
+2  4 0 0  1 1 1 1  0 0 0 0 2
+65 4 0 0  1 1 1 1  0 0 0 0 2
+15 4 0 0  1 1 1 1  0 0 0 0 2
+2  4 0 0  1 1 1 1  0 0 0 0 2
+2  4 0 0  1 1 1 1  0 0 0 0 2
+12 4 0 0  1 1 1 1  0 0 0 0 2
+48 4 0 0  1 1 1 1  0 0 0 0 2
+
+% corner flow region 
+21 22 23 24 25 26 27 28 29 30
+31 32 33 34 35 36 37 38 39 40
+30 27 0 0  1 1 1 1  0 0 0 0 3
+2  27 0 0  1 1 1 1  0 0 0 0 3
+2  27 0 0  1 1 1 1  0 0 0 0 3
+65 27 0 0  1 1 1 1  0 0 0 0 3
+15 27 0 0  1 1 1 1  0 0 0 0 4
+2  27 0 0  1 1 1 1  0 0 0 0 4
+2  27 0 0  1 1 1 1  0 0 0 0 4
+12 27 0 0  1 1 1 1  0 0 0 0 4
+48 27 0 0  1 1 1 1  0 0 0 0 5
+
+% cont mantle
+31 32 33 34 35 36 37 38 39 40
+41 42 43 44 45 46 47 48 49 50
+30 3 0 0  1 1 1 1  0 0 0 0 3
+2  3 0 0  1 1 1 1  0 0 0 0 3
+2  3 0 0  1 1 1 1  0 0 0 0 3
+65 3 0 0  1 1 1 1  0 0 0 0 3
+15 3 0 0  1 1 1 1  0 0 0 0 4
+2  3 0 0  1 1 1 1  0 0 0 0 4
+2  3 0 0  1 1 1 1  0 0 0 0 4
+12 3 0 0  1 1 1 1  0 0 0 0 4
+48 3 0 0  1 1 1 1  0 0 0 0 4
+
+%cont crust
+41 42 43 44 45 46 47 48 49 50
+51 52 53 54 55 56 57 58 59 60
+30 7 0 0  1 1 1 1  0 0 0 0 6
+2  7 0 0  1 1 1 1  0 0 0 0 6
+2  7 0 0  1 1 1 1  0 0 0 0 6
+65 7 0 0  1 1 1 1  0 0 0 0 7
+15 7 0 0  1 1 1 1  0 0 0 0 7
+2  7 0 0  1 1 1 1  0 0 0 0 7
+2  7 0 0  1 1 1 1  0 0 0 0 7
+12 7 0 0  1 1 1 1  0 0 0 0 7
+48 7 0 0  1 1 1 1  0 0 0 0 7
+
+%top boundary for corner flow
+39 40
+39 40
+48 0 0 0  -1 -1 1 1  0 0 0 0 8
+
+% top boundary (model)
+51 52 53 54 55 56 57 58 59 60
+51 52 53 54 55 56 57 58 59 60
+30 0 0 0  -1 -1 -1 -1  0 0 0 0 9
+2  0 0 0  -1 -1 -1 -1  0 0 0 0 9
+2  0 0 0  -1 -1 -1 -1  0 0 0 0 9
+65 0 0 0  -1 -1 -1 -1  0 0 0 0 10
+15 0 0 0  -1 -1 -1 -1  0 0 0 0 10
+2  0 0 0  -1 -1 -1 -1  0 0 0 0 10
+2  0 0 0  -1 -1 -1 -1  0 0 0 0 10
+12 0 0 0  -1 -1 -1 -1  0 0 0 0 10
+48 0 0 0  -1 -1 -1 -1  0 0 0 0 10
+
+%left boundary for corner flow
+29 39
+29 39
+27 0 0 0 -1 -1 1 1  0 0 0 0 11
+
+%right boundary (model)
+10 20 30 40 50 60
+10 20 30 40 50 60
+12 0 0 0  1 1 1 1  0 0 0 0 12
+4 0 0 0  1 1 1 1  0 0 0 0 12
+27 0 0 0  1 1 1 1  0 0 0 0 12
+3 0 0 0 -1 -1 -1 -1  0 0 0 0 12
+7 0 0 0  -1 -1 -1 -1  0 0 0 0 12
+
+%left boundary (model)
+1 11 21 31 41 51
+1 11 21 31 41 51
+12 0 0 0   1  1  1 -1  0 0 0 0 13
+4 0 0 0   1  1  1 -1  0 0 0 0 13
+27  0 0 0  -1 -1 -1 -1  0 0 0 0 13
+3  0 0 0  -1 -1 -1 -1  0 0 0 0 13
+7  0 0 0  -1 -1 -1 -1  0 0 0 0 13
+
+%bottom boundary (model)
+1 2 3 4 5 6 7 8 9 10
+1 2 3 4 5 6 7 8 9 10
+30 0 0 0  -1 -1 1 -1  1.5855e-9 0 0 1450 14
+2  0 0 0  -1 -1 1 -1  1.5855e-9 0 0 1450 14
+2  0 0 0  -1 -1 1 -1  1.5855e-9 0 0 1450 14
+65 0 0 0  -1 -1 1 -1  1.5855e-9 0 0 1450 14
+15 0 0 0  -1 -1 1 -1  1.5855e-9 0 0 1450 14
+2  0 0 0  -1 -1 1 -1  1.5855e-9 0 0 1450 14
+2  0 0 0  -1 -1 1 -1  1.5855e-9 0 0 1450 14
+12 0 0 0  -1 -1 1 -1  1.5855e-9 0 0 1450 14
+48 0 0 0  -1 -1 1 -1  1.5855e-9 0 0 1450 14
+
+%surface top boundary (model)
+51 52 53 54 55 56 57 58 59 60
+51 52 53 54 55 56 57 58 59 60
+30 0 0 0  -1 -1 -1 -1  0 0 0 0 16
+2  0 0 0  -1 -1 -1 -1  0 0 0 0 16
+2  0 0 0  -1 -1 -1 -1  0 0 0 0 16
+65 0 0 0  -1 -1 -1 -1  0 0 0 0 16
+15 0 0 0  -1 -1 -1 -1  0 0 0 0 16
+2  0 0 0  -1 -1 -1 -1  0 0 0 0 16
+2  0 0 0  -1 -1 -1 -1  0 0 0 0 16
+12 0 0 0  -1 -1 -1 -1  0 0 0 0 16
+48 0 0 0  -1 -1 -1 -1  0 0 0 0 16
+
+%fault
+21 22 23 24 25 26 27 28 29 30
+21 22 23 24 25 26 27 28 29 30
+30 0 0 0  -1 -1 1 1  1.5855e-9 0 0 0 15
+2  0 0 0  -1 -1 1 1  1.5855e-9 0 0 0 15
+2  0 0 0  -1 -1 1 1  1.5855e-9 0 0 0 15
+65 0 0 0  -1 -1 1 1  1.5855e-9 0 0 0 15
+15 0 0 0  -1 -1 1 1  1.5855e-9 0 0 0 15
+2  0 0 0  -1 -1 1 1  1.5855e-9 0 0 0 15
+2  0 0 0  -1 -1 1 1  1.5855e-9 0 0 0 15
+12 0 0 0  -1 -1 1 1  1.5855e-9 0 0 0 15
+48 0 0 0  -1 -1 1 1  1.5855e-9 0 0 0 15
+
+% physical properties
+%  1               A
+%  2               Q
+%  3               N
+%  4               conductivity
+%  5               heat_specific
+%  6               rho(density)
+%  7               g
+%  8               shear heating in crust or mantle
+%  9               heat-source
+%  10              d-rho
+%  11              heatflow
+%  12              h (thickness of shear layer along the fault),if h>0, 
+%                  then shear heating will be calculated if h=0 no shear heating
+%  13              tau
+%  14              anta
+%  15              flag for calculating flow, 1=computed,
+%                  0 = not computed.
+%  16              flag for calculating the along-fault shear heating.
+%                  1=computed,0 = not computed.
+
+%slab mantle
+&1e25 &1e-21 &1 &2.8 &900 &3300 &9.82 &0 &2.00e-8 &0 &0 &0 &0 &0 &1 &0
+
+%slab crust
+&1e25 &1e-21 &1 &1.6 &800 &2800 &9.82 &0 &2.00e-7 &0 &0 &0 &0 &0 &1 &0
+
+%LAB and corner flow
+&1e25 &1e-21 &1 &1.6 &800 &2800 &9.82 &0 &2.00e-7 &0 &0 &0 &0 &0 &0 &0
+&1e25 &1e-21 &1 &2.8 &900 &3300 &9.82 &0 &2.00e-8 &0 &0 &0 &0 &0 &0 &0
+&1e25 &1e-21 &1 &2.8 &900 &3300 &9.82 &0 &2.00e-8 &0 &0 &0 &0 &0 &1 &0
+
+%oceanic and continental crust at top of model
+&1e25 &1e-21 &1 &1.6 &800 &2800 &9.82 &0 &2.00e-7 &0 &0 &0 &0 &0 &0 &0
+&1e25 &1e-21 &1 &2.2 &800 &2700 &9.82 &0 &1.15e-6 &0 &0 &0 &0 &0 &0 &0
+
+%top boundary for corner flow
+&1e25 &1e-21 &1 &2.8 &900 &3300 &9.82 &0 &2.00e-8 &0 &0 &0 &0 &0 &0 &0
+
+%top boundary for model
+&1e25 &1e-21 &1 &1.6 &800 &2800 &9.82 &0 &2.00e-7 &0 &0 &0 &0 &0 &0 &0
+&1e25 &1e-21 &1 &2.2 &800 &2700 &9.82 &0 &1.15e-6 &0 &0 &0 &0 &0 &0 &0
+
+%left boundary for corner flow
+&1e25 &1e-21 &1 &2.8 &900 &3300 &9.82 &0 &2.00e-8 &0 &0 &0 &0 &0 &0 &0
+
+%right boundary for model
+&1e25 &1e-21 &1 &2.8 &900 &3300 &9.82 &0 &2.00e-8 &0 &0 &0 &0 &0 &0 &0
+
+%left boundary for model
+&1e25 &1e-21 &1 &2.8 &900 &3300 &9.82 &0 &2.00e-8 &0 &0 &0 &0 &0 &0 &0
+
+%bottom boundary for model
+&1e25 &1e-21 &1 &2.8 &900 &3300 &9.82 &0 &2.00e-8 &0 &0 &0 &0 &0 &0 &0
+
+%fault, 16 = shear heating
+&1e25 &1e-21 &1 &1.6 &800 &2800 &9.82 &0 &0 &0 &0 &0 &0 &0 &0 &0
+%&4.47e-38 &8.9 &3.8 &1.6 &800 &2800 &9.82 &0 &2.00e-7 &0 &0 &250 &0 &0.03 &0 &1
+%commented out shear heating line for fault
+
+%surface (top boundary of model)
+&1e21 &1e-21 &1 &1.6 &800 &2800 &9.82 &0 &0 &0 &0 &0 &0 &0 &0 &0
+
+% boundary condition defined by a function of x and y
+% Format:
+% function,u,v,p,t,idu,idv,idp,idt
+
+1
+%coordinates for zero pressure point
+&abs(x-850.000e3)+abs(y+50.e3)=0,&0,&0,&0,&0,&-1,&-1,&-1,&-1
+
+
+% time intervals
+% Format:
+% N
+% t1,t2,dt, in unit of year
+% number of time interval
+% beginning and end of the time interval, number
+% of divisions
+
+1
+0  1.e40  1
+
+% Criterion for nonlinear iteration
+1.e-6 1.e-6
+
+%  material # of surface and bottom of slab
+14 15
+
+%  material # of domain where flow is computed
+1 2 5
+
+%  material # of surface boundary where heat flow is computed and
+%  also for computing shear hearting (provides vertical distance)
+17
+
+%  material # of oceanic boundary
+13 inst_ob
+
+%  material # of continental  boundary
+12 inst_cb
+
+%  set up constant temperature for block with particular material #
+%  column1: material#
+%  column2: temperature
+100 0
+
