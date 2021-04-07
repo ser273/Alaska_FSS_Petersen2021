@@ -1,4 +1,4 @@
-This repository contains codes and data related to the manuscript “Assessing the Role of Water in Alaskan Flat-Slab Subduction Using Thermal and Phase Equilibria Modeling Approaches”, submitted to the AGU journal “Geochemistry, Geophysics, Geosystems” in the year 2021.
+This repository contains codes and data related to the manuscript “Assessing the Role of Water in Alaskan Flat-Slab Subduction”, submitted to the AGU journal “Geochemistry, Geophysics, Geosystems” in the year 2021.
 Authors: Sarah Petersen, Thomas Hoisch, Ryan Porter
 
 This folder contains a matlab code titled “Calc_Density_Hydration.m”.
